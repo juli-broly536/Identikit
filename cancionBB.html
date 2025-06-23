@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Imagenes/signo de musica.png">
+    <title>Canciones</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        nav {
+            background-color: burlywood;
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+        }
+        
+        nav ul {
+            list-style: none; 
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav li {
+            display: inline-block; 
+            margin: 0 15px; 
+        }
+        
+        nav a {
+            text-decoration: none; 
+            color: black; 
+        }
+        li {
+            display: inline-block;
+        }
+        aside {
+            background-color: bisque;
+            display: inline-block;
+            width: 25%;
+            height: 600px;
+        
+        }
+        section {
+            background-color: gray;
+            display: inline-block;
+            width: 75%;
+            height: 600px;
+            vertical-align: top;
+            text-align: center;
+        }
+        footer {
+            background-color: burlywood;
+            height: 100px;
+        
+        }
+        aside li {
+            display: block;
+            background-color: bisque;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        aside li:hover  {
+            background-color: white;
+        
+        }
+        
+        </style>
+        
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="tabla.html">Tabla</a></li>
+            <li><a href="trivia.html">Trivia</a></li>
+            <li><a href="Canciones.html">Canciones</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <aside>
+            <ul>
+                <li><a href="BaileInolvidable.html" onclick="showSong('2lTm559tuIvatlT1u0JYG2')">Baile Inolvidable</a></li><br>
+                <li><a href="UnVeranoSinTi.html" onclick="showSong('3UoULw70kMsiVXxW0L3A33')">Un Verano Sin Ti</a></li><br>
+                <li><a href="OjitosLindos.html" onclick="showSong('4h9wh7iOZ0GGn8QVp4RAOB')">Ojitos Lindos</a></li><br>
+                <li><a href="MojabiGhost.html" onclick="showSong('1oFAF8X9j0zMZxoaO1H3u0')">Mojabi Ghost</a></li><br>
+                <li><a href="Yonaguni.html" onclick="showSong('7qEHsqek33rTcFNT9PFqLf')">Yonaguni</a></li><br>
+            </ul>
+        </aside>
+        <section>
+            <h1>Mis canciones favoritas de Bad Bunny</h1>
+            <iframe id="spotify-player" style="border-radius:12px" 
+                src="https://open.spotify.com/embed/track/2lTm559tuIvatlT1u0JYG2?utm_source=generator" 
+                width="100%" height="352" frameBorder="0" allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+            </iframe>
+        </section>
+    </main>
+
+    <footer>
+        © 2025 - Mis Canciones Favoritas
+    </footer>
+
+    <script>
+        function showSong(trackId) {
+            const spotifyPlayer = document.getElementById('spotify-player');
+            spotifyPlayer.src = `https://open.spotify.com/embed/track/${trackId}?utm_source=generator`;
+        }
+    </script>
+</body>
+</html>

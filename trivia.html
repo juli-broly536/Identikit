@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Imagenes/Signo de pregunta.jpg">
+    <title>Trivia de Capitales</title>
+    <link rel="stylesheet" href="style.css">
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+</head>
+<body>
+    <nav>
+
+        <ul>
+            
+        <li><a href="index.html">Presentacion</a></li>
+        <li><a href="tabla.html">Tabla</a></li>
+        <li><a href="trivia.html">Trivia</a></li>
+        <li><a href="Canciones.html">Canciones</a></li>
+        
+        </ul>
+        
+        
+        </nav>
+
+    <center>
+    <h1>Trivia de Capitales</h1>
+    <div class="trivia-container">
+        <form id="trivia-form">
+            <div class="question">
+                <label>1. ¿Cuál es la capital de Argentina?</label>
+                <div class="options">
+                    <label><input type="radio" name="argentina" value="buenos aires"> Buenos Aires</label><br>
+                    <label><input type="radio" name="argentina" value="cordoba"> Córdoba</label><br>
+                    <label><input type="radio" name="argentina" value="rosario"> Rosario</label>
+                </div>
+                <p class="result" id="result-argentina"></p>
+            </div>
+            <div class="question">
+                <label>2. ¿Cuál es la capital de Inglaterra?</label>
+                <div class="options">
+                    <label><input type="radio" name="inglaterra" value="manchester"> Manchester</label><br>
+                    <label><input type="radio" name="inglaterra" value="londres"> Londres</label><br>
+                    <label><input type="radio" name="inglaterra" value="liverpool"> Liverpool</label>
+                </div>
+                <p class="result" id="result-inglaterra"></p>
+            </div>
+            <div class="question">
+                <label>3. ¿Cuál es la capital de Brasil?</label>
+                <div class="options">
+                    <label><input type="radio" name="brasil" value="rio de janeiro"> Río de Janeiro</label><br>
+                    <label><input type="radio" name="brasil" value="sao paulo"> São Paulo</label><br>
+                    <label><input type="radio" name="brasil" value="brasilia"> Brasilia</label>
+                </div>
+                <p class="result" id="result-brasil"></p>
+            </div>
+            <div class="question">
+                <label>4. ¿Cuál es la capital de España?</label>
+                <div class="options">
+                    <label><input type="radio" name="espana" value="barcelona"> Barcelona</label><br>
+                    <label><input type="radio" name="espana" value="valencia"> Valencia</label><br>
+                    <label><input type="radio" name="espana" value="madrid"> Madrid</label>
+                </div>
+                <p class="result" id="result-espana"></p>
+            </div>
+            <div class="question">
+                <label>5. ¿Cuál es la capital de Francia?</label>
+                <div class="options">
+                    <label><input type="radio" name="francia" value="marsella"> Marsella</label><br>
+                    <label><input type="radio" name="francia" value="paris"> París</label><br>
+                    <label><input type="radio" name="francia" value="lyon"> Lyon</label>
+                </div>
+                <p class="result" id="result-francia"></p>
+            </div>
+            <div class="question">
+                <label>6. ¿Cuál es la capital de México?</label>
+                <div class="options">
+                    <label><input type="radio" name="mexico" value="guadalajara"> Guadalajara</label><br>
+                    <label><input type="radio" name="mexico" value="monterrey"> Monterrey</label><br>
+                    <label><input type="radio" name="mexico" value="ciudad de mexico"> Ciudad de México</label>
+                </div>
+                <p class="result" id="result-mexico"></p>
+            </div>
+            <div class="question">
+                <label>7. ¿Cuál es la capital de Uruguay?</label>
+                <div class="options">
+                    <label><input type="radio" name="uruguay" value="montevideo"> Montevideo</label><br>
+                    <label><input type="radio" name="uruguay" value="punta del este"> Punta del Este</label><br>
+                    <label><input type="radio" name="uruguay" value="colonia"> Colonia</label>
+                </div>
+                <p class="result" id="result-uruguay"></p>
+            </div>
+            <div class="question">
+                <label>8. ¿Cuál es la capital de Japón?</label>
+                <div class="options">
+                    <label><input type="radio" name="japon" value="osaka"> Osaka</label><br>
+                    <label><input type="radio" name="japon" value="tokio"> Tokio</label><br>
+                    <label><input type="radio" name="japon" value="kioto"> Kioto</label>
+                </div>
+                <p class="result" id="result-japon"></p>
+            </div>
+            <button type="button" class="submit-btn" onclick="checkAnswers()">Enviar</button>
+        </form>
+        <p class="note">Revisa tus respuestas manualmente para saber cuántas acertaste.</p>
+    </div>
+</center>
+    <script>
+        function checkAnswers() {
+            const correctAnswers = {
+                argentina: "buenos aires",
+                inglaterra: "londres",
+                brasil: "brasilia",
+                espana: "madrid",
+                francia: "paris",
+                mexico: "ciudad de mexico",
+                uruguay: "montevideo",
+                japon: "tokio"
+            };
+
+            for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                const resultElement = document.getElementById(`result-${question}`);
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswer) {
+                        resultElement.textContent = "✔ Correcto";
+                        resultElement.className = "result correct";
+                    } else {
+                        resultElement.textContent = "✖ Incorrecto";
+                        resultElement.className = "result incorrect";
+                    }
+                } else {
+                    resultElement.textContent = "✖ No respondida";
+                    resultElement.className = "result incorrect";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+                    
